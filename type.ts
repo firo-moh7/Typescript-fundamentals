@@ -5,38 +5,6 @@ interface GroupMatcher{
     online : boolean;
 }
 
-interface user{
-    id : number;
-    title : string;
-    content : string;
-    author : string;
-    published : boolean;
-    catagory? : string; 
-}
-
-const user5 : user = {
-    id : 1,
-    title : "Rading a Book",
-    content : "Reading a book is very essential for the well being of oneself",
-    author : "By Aamir",
-    published : true
-}
-
-const user6 : user = {
-    id : 2,
-    title : "Learning Typescript",
-    content : "Typescript is way more better than javascript because it catches error early",
-    author : "Aamir",
-    published : false,
-    catagory : "Programming",
-
-}
-
-const users : user[] = [
-    user5,
-    user6
-];
-
 
 const group1: GroupMatcher = {
     id : 1,
