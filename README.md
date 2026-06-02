@@ -1,10 +1,12 @@
 # TypeScript Fundamentals
 
-This repository contains my TypeScript learning exercises as part of my full-stack development roadmap.
+This repository contains my TypeScript learning exercises as part of my journey toward becoming a full-stack developer.
 
-## Topics Covered
+## Progress
 
-### Day 1
+### Day 1 - TypeScript Fundamentals
+
+Topics covered:
 
 * Basic Types
 
@@ -17,7 +19,16 @@ This repository contains my TypeScript learning exercises as part of my full-sta
 * Arrays of Objects
 * forEach Iteration
 
-### Day 2
+Projects:
+
+* Study Group Manager
+* User Management System
+
+---
+
+### Day 2 - Intermediate TypeScript
+
+Topics covered:
 
 * Union Types
 * Type Aliases
@@ -25,31 +36,93 @@ This repository contains my TypeScript learning exercises as part of my full-sta
 * Type Narrowing
 * Generics
 
-## Projects
+Projects:
 
-### Study Group Example
+* Employee Management System
+* Generic Utility Functions
 
-Implemented a `GroupMatcher` interface and created typed study group objects.
+Key Concepts:
 
-### User Management Example
+```ts
+type Role = "admin" | "user" | "manager";
 
-Created a `User` interface and displayed multiple users from a typed array.
+function getFirst<T>(items: T[]): T {
+    return items[0];
+}
+```
 
-### Employee Management Example
+---
 
-Created an `Employee` interface with role restrictions using literal types.
+### Day 3 - Advanced TypeScript Types
 
-Implemented:
+Topics covered:
 
-* Employee listing
-* Generic `getFirst<T>()` function
-* Type-safe role management
+* Partial<T>
+* Pick<T>
+* Omit<T>
+* Type Assertions
+* Generic Interfaces
+
+Projects:
+
+* Product Management System
+* Generic API Response Models
+
+Key Concepts:
+
+#### Partial
+
+```ts
+type ProductUpdate = Partial<Product>;
+```
+
+Used when updating only some fields of an object.
+
+#### Pick
+
+```ts
+type ProductPreview = Pick<Product, "name" | "price">;
+```
+
+Used when selecting specific properties from a type.
+
+#### Omit
+
+```ts
+type ProductWithoutCategory = Omit<Product, "category">;
+```
+
+Used when excluding specific properties from a type.
+
+#### Type Assertions
+
+```ts
+const data: unknown = "typescript";
+const text = data as string;
+```
+
+Used when TypeScript needs additional type information.
+
+#### Generic Interfaces
+
+```ts
+interface ApiResponse<T> {
+    success: boolean;
+    data: T;
+}
+```
+
+Used to create reusable and type-safe API response structures.
+
+---
 
 ## Technologies
 
 * TypeScript
 * Node.js
 * ts-node
+* Git
+* GitHub
 
 ## How to Run
 
@@ -59,50 +132,35 @@ Install dependencies:
 npm install
 ```
 
-Run the project:
+Run a TypeScript file:
 
 ```bash
 npx ts-node day1.ts
 ```
 
-## Key Concepts Learned
+Example:
 
-### Interfaces
-
-```ts
-interface User {
-  id: number;
-  username: string;
-}
+```bash
+npx ts-node day3.ts
 ```
 
-### Union Types
+## Learning Outcomes
 
-```ts
-type ID = string | number;
-```
+After completing Days 1–3, I can:
 
-### Literal Types
-
-```ts
-type Role = "admin" | "user" | "manager";
-```
-
-### Generics
-
-```ts
-function getFirst<T>(items: T[]): T {
-  return items[0];
-}
-```
-
-## Learning Outcome
-
-After completing these exercises, I can:
-
-* Create custom interfaces
-* Work with typed arrays
+* Create and use interfaces
+* Work with arrays of typed objects
 * Use union and literal types
 * Apply type narrowing
 * Create reusable generic functions
-* Build type-safe TypeScript applications
+* Use utility types such as Partial, Pick, and Omit
+* Build generic API response structures
+* Write safer and more maintainable TypeScript code
+
+## Next Steps
+
+* Advanced TypeScript Patterns
+* Async TypeScript
+* React with TypeScript
+* Next.js with TypeScript
+* Full-Stack Application Development
